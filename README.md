@@ -129,10 +129,13 @@ Thank you for installing Miniconda3!
 conda 23.11.0
 ```
 ## Cloning the Repository
-to set up this repository on your scratch directory.
+you need to clone this repository on your scratch directory.
 ```bash
 [glogin01]$ cd /scratch/$USER
-[glogin01]$ git clonehttps://github.com/hwang2006/multimodal-ai-use-cases-on-hpc.git
+[glogin01]$ git clone https://github.com/hwang2006/multimodal-ai-use-cases-on-hpc.git
+[glogin01]$ ls multimodal-ai-use-cases-on-hpc
+./   1-mm-llms/        3-multimodal-rag/    5-ft-flux/  .gitignore      LICENSE                  README.md
+../  2-mm-embeddings/  4-ft-mm-embeddings/  .git/       jupyter_run.sh  
 ```
 
 ## Creating a Conda Virtual Environment
