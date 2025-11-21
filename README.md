@@ -129,9 +129,9 @@ Thank you for installing Miniconda3!
 conda 24.3.0
 ```
 ## Creating a Conda Virtual Environment
-You need to create a virtual envrionment for a large-scale language model tutorial.
+You need to create a virtual envrionment for exercising multimodal AI use cases.
 
-1. Create a conda virtual environment with a python version 3.10
+1. Create a conda virtual environment with a python version 3.12
 ```
 [glogin01]$ conda create -n multimodal-ai python=3.12 -y
 Channels:
@@ -142,7 +142,7 @@ Solving environment: done
 
 ## Package Plan ##
 
-  environment location: /scratch/qualis/miniconda3/envs/large-s
+  environment location: /scratch/qualis/miniconda3/envs/multimodal-ai
 
   added / updated specs:
     - python=3.12
@@ -155,7 +155,7 @@ Executing transaction: done
 #
 # To activate this environment, use
 #
-#     $ conda activate large-scale-lm
+#     $ conda activate multimodal-ai
 #
 # To deactivate an active environment, use
 #
