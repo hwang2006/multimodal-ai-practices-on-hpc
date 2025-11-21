@@ -132,8 +132,7 @@ conda 23.11.0
 to set up this repository on your scratch directory.
 ```bash
 [glogin01]$ cd /scratch/$USER
-[glogin01]$ git clone 
-[glogin01]$ cd gpt-oss-with-ollama-on-supercomputing
+[glogin01]$ git clonehttps://github.com/hwang2006/multimodal-ai-use-cases-on-hpc.git
 ```
 
 ## Creating a Conda Virtual Environment
