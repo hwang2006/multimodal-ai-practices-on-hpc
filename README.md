@@ -2,7 +2,7 @@
 
 This repo contains hands-on examples of running **multimodal AI workloads** (text + image) on the **KISTI Neuron GPU cluster**, from basic multimodal LLMs to RAG and fine-tuning custom embedding models.
 
-> **Note:** This repository is based on the [multimodal AI repository](https://github.com/ShawhinT/YouTube-Blog/tree/main/multimodal-ai) created by Shaw Talebi and adapted for HPC environments.
+> **Note:** Based on [Shaw Talebi's multimodal AI tutorials](https://github.com/ShawhinT/YouTube-Blog/tree/main/multimodal-ai), adapted for HPC.
 
 ---
 
@@ -499,6 +499,13 @@ Password or token: $USER    # your account name on Neuron
 
 ## License
 This project is licensed under the terms specified in the LICENSE file.
+
+## Acknowledgments
+This repository is based on the [multimodal AI repository](https://github.com/ShawhinT/YouTube-Blog/tree/main/multimodal-ai) created by Shaw Talebi. The original tutorials have been adapted and extended for execution on KISTI's Neuron HPC cluster, including:
+- Integration with Slurm workload manager
+- Singularity container deployment for Ollama
+- Conda environment setup for HPC systems
+- SSH tunneling for Jupyter Lab access
 
 ## Contributing
 Contributions are welcome! Please feel free to submit issues or pull requests.
