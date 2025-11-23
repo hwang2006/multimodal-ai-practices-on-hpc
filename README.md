@@ -238,7 +238,7 @@ Successfully installed MarkupSafe-2.1.5 filelock-3.19.1 fsspec-2025.9.0 jinja2-3
 
 ### 2. Install Jupyter
 ```bash
-(multimodal-ai) [glogin01]$ conda install jupyter
+(multimodal-ai) [glogin01]$ pip install jupyter
 Looking in indexes: https://pypi.org/simple, https://pypi.ngc.nvidia.com
 Collecting jupyter
   Downloading jupyter-1.1.1-py2.py3-none-any.whl.metadata (2.0 kB)
