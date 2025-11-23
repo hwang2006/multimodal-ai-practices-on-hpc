@@ -2,7 +2,7 @@
 
 This repo contains hands-on examples of running **multimodal AI workloads** (text + image) on the **KISTI Neuron GPU cluster**, from basic multimodal LLMs to RAG and fine-tuning custom embedding models.
 
-> **Note:** Based on [Shaw Talebi's multimodal AI tutorials](https://github.com/ShawhinT/YouTube-Blog/tree/main/multimodal-ai), adapted for HPC.
+> **Note:** Based on [Shaw Talebi's multimodal AI](https://github.com/ShawhinT/YouTube-Blog/tree/main/multimodal-ai), adapted for HPC.
 
 ---
 
