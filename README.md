@@ -4,28 +4,15 @@ This repo contains hands-on examples of running **multimodal AI workloads** (tex
 
 ---
 
-## Multimodal AI Use Cases in This Repository
+## Multimodal AI Practices on HPC
 
-Each subdirectory under `multimodal-ai-use-cases-on-hpc` demonstrates a different multimodal workflow designed to run on Neuron via Slurm, Conda, and Singularity/Ollama.
+Each subdirectory under `multimodal-ai-use-cases-on-hpc` demonstrates a different multimodal workflow designed to run on the Neuron cluster:
 
-1. **1-mm-llms — Multimodal LLMs on HPC**  
-   Run vision–language models (via Ollama) on Neuron to chat about **text + images**, test prompts, and understand how multimodal LLM inference behaves in an HPC environment.
-
-2. **2-mm-embeddings — Multimodal Embeddings & Retrieval**  
-   Use off-the-shelf CLIP-like models to create **joint image–text embeddings**, and perform similarity search / retrieval (e.g., find images that best match a query sentence, or vice versa).
-
-3. **3-multimodal-rag — Multimodal RAG over Articles**  
-   Build an end-to-end **multimodal RAG pipeline** that:
-   - extracts text and images from article files,
-   - builds text/image embedding indices on Neuron,
-   - and serves an interactive **Gradio chat UI** backed by `llama3.2-vision` via Ollama for multimodal question answering.
-
-4. **4-ft-mm-embeddings — Fine-tuning Multimodal Embeddings**  
-   Create a **YouTube title–thumbnail dataset** and fine-tune CLIP-based SentenceTransformers models on Neuron so that image–text embeddings better match your own content (e.g., titles that “fit” your thumbnails).  
-   - Notebook `1-prepare_training_data.ipynb`: build the dataset and push it to Hugging Face Hub.  
-   - Notebook `2-finetune_clip_sbert.ipynb`: fine-tune and evaluate CLIP variants (with Recall@1 and triplet evaluation) on CPU/GPU.
-
-> (Optional) **5-ft-flux** can be used to explore fine-tuning image generation models (e.g., FLUX) in the same Neuron + Conda + Slurm setup.
+- **1-mm-llms** – Run multimodal LLMs (vision–language models) via Ollama to chat over **text + images** on Neuron.
+- **2-mm-embeddings** – Build and query **joint image–text embeddings** (CLIP-style) for similarity search and retrieval.
+- **3-multimodal-rag** – Implement a **multimodal RAG pipeline** with text/image embedding indices and a Gradio chat UI backed by `llama3.2-vision`.
+- **4-ft-mm-embeddings** – Create a **YouTube title–thumbnail dataset** and fine-tune CLIP-based SentenceTransformers models (with Recall@1 / triplet evaluation) on Neuron.
+- **5-ft-flux** *(optional)* – Explore fine-tuning image generation models (e.g., FLUX) in the same Neuron + Conda + Slurm setup.
 
 ---
 
