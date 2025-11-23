@@ -23,7 +23,7 @@ OLLAMA_PORT=11434
 #DEFAULT_MODEL="llama3.2-vision:latest"
 DEFAULT_MODEL=0
 
-WORK_DIR="/scratch/$USER/multimodal-ai-use-cases-on-hpc/"
+WORK_DIR="/scratch/$USER/multimodal-ai-practices-on-hpc/"
 OLLAMA_MODELS="/scratch/$USER/.ollama"
 
 # Force NVIDIA path by unsetting AMD/ROCm vars
