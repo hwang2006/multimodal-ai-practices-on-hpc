@@ -1,4 +1,4 @@
-# multimodal-ai-use-cases-on-hpc
+# multimodal-ai-practices-on-hpc
 
 This repo contains hands-on examples of running **multimodal AI workloads** (text + image) on the **KISTI Neuron GPU cluster**, from basic multimodal LLMs to RAG and fine-tuning custom embedding models.
 
