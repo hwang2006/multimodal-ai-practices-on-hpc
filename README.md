@@ -1,5 +1,34 @@
 # multimodal-ai-use-cases-on-hpc
 
+This repo contains hands-on examples of running **multimodal AI workloads** (text + image) on the **KISTI Neuron GPU cluster**, from basic multimodal LLMs to RAG and fine-tuning custom embedding models.
+
+---
+
+## Multimodal AI Use Cases in This Repository
+
+Each subdirectory under `multimodal-ai-use-cases-on-hpc` demonstrates a different multimodal workflow designed to run on Neuron via Slurm, Conda, and Singularity/Ollama.
+
+1. **1-mm-llms — Multimodal LLMs on HPC**  
+   Run vision–language models (via Ollama) on Neuron to chat about **text + images**, test prompts, and understand how multimodal LLM inference behaves in an HPC environment.
+
+2. **2-mm-embeddings — Multimodal Embeddings & Retrieval**  
+   Use off-the-shelf CLIP-like models to create **joint image–text embeddings**, and perform similarity search / retrieval (e.g., find images that best match a query sentence, or vice versa).
+
+3. **3-multimodal-rag — Multimodal RAG over Articles**  
+   Build an end-to-end **multimodal RAG pipeline** that:
+   - extracts text and images from article files,
+   - builds text/image embedding indices on Neuron,
+   - and serves an interactive **Gradio chat UI** backed by `llama3.2-vision` via Ollama for multimodal question answering.
+
+4. **4-ft-mm-embeddings — Fine-tuning Multimodal Embeddings**  
+   Create a **YouTube title–thumbnail dataset** and fine-tune CLIP-based SentenceTransformers models on Neuron so that image–text embeddings better match your own content (e.g., titles that “fit” your thumbnails).  
+   - Notebook `1-prepare_training_data.ipynb`: build the dataset and push it to Hugging Face Hub.  
+   - Notebook `2-finetune_clip_sbert.ipynb`: fine-tune and evaluate CLIP variants (with Recall@1 and triplet evaluation) on CPU/GPU.
+
+> (Optional) **5-ft-flux** can be used to explore fine-tuning image generation models (e.g., FLUX) in the same Neuron + Conda + Slurm setup.
+
+---
+
 ## Environments
 ### KISTI Neuron GPU Cluster
 Neuron is a [KISTI GPU cluster system](https://docs-ksc.gitbook.io/neuron-user-guide) consisting of 65 nodes with 260 GPUs (120 of NVIDIA A100 GPUs and 140 of NVIDIA V100 GPUs). [Slurm](https://slurm.schedmd.com/) is adopted for cluster/resource management and job scheduling.
