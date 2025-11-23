@@ -214,4 +214,7 @@ ollama_port_forwarding_*.txt
 # Miscellaneous
 port_forwarding_command
 slurm-*.out
+3-multimodal-rag/.gradio/
 4-ft-mm-embeddings/top_secret.py
+4-ft-mm-embeddings/models/
+
