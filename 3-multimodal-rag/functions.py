@@ -109,7 +109,7 @@ def parse_html_content(html_content):
     
     return structured_content
 
-def parse_html_images(html_content):
+def parse_html_images_bak(html_content):
     """
     Parse HTML content and extract images with their captions.
     
@@ -178,6 +178,54 @@ def parse_html_images(html_content):
                     'caption': caption or "No caption available"
                 })
     
+    return structured_content
+
+def parse_html_images(html_content, base_dir="."):
+    soup = BeautifulSoup(html_content, 'html.parser')
+    article_title = soup.find('title').get_text().strip() if soup.find('title') else "Untitled"
+
+    structured_content = []
+    current_section = "Main"
+
+    content_elements = soup.find_all(['h1', 'h2', 'h3', 'img', 'figure'])
+
+    for element in content_elements:
+        if element.name in ['h1', 'h2', 'h3']:
+            current_section = element.get_text().strip()
+
+        elif element.name == 'img':
+            src = element.get('src', '').strip()
+            if not src:
+                continue
+
+            image_path = None
+
+            # 1) local relative path (e.g. "images/1.jpg")
+            if not src.startswith("http://") and not src.startswith("https://"):
+                local_path = os.path.join(base_dir, src)
+                if os.path.exists(local_path):
+                    image_path = local_path
+                else:
+                    # fallback to raw src
+                    image_path = src
+
+            # 2) remote URL – just keep URL, no download
+            else:
+                image_path = src
+
+            caption = element.get('alt', '')
+            if not caption and element.parent.name == 'figure':
+                figcaption = element.parent.find('figcaption')
+                if figcaption:
+                    caption = figcaption.get_text().strip()
+
+            structured_content.append({
+                'article_title': article_title,
+                'section': current_section,
+                'image_path': image_path,
+                'caption': caption or "No caption available"
+            })
+
     return structured_content
 
 def save_to_json(structured_content, output_file='output.json'):

@@ -161,7 +161,7 @@ echo "ssh -L localhost:8888:${SERVER}:${PORT_JU} ${USER}@neuron.ksc.re.kr"
 # Env / modules
 #######################################
 if [ -f /etc/profile.d/modules.sh ]; then . /etc/profile.d/modules.sh; fi
-module load gcc/10.2.0 cuda/12.4
+module load gcc/10.2.0 cuda/12.4 cmake/3.26.2
 
 # Activate conda environment
 source ~/.bashrc

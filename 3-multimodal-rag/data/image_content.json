@@ -1,104 +1,121 @@
 [
     {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Multimodal Embeddings: An Introduction",
-        "image_path": "images/1*a6BF-kEeo8rd7OW2a3JYGA.png",
-        "caption": "Image from Canva."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Embeddings",
-        "image_path": "images/1*jpmC6Kx7DxVeikEr15vooA.png",
-        "caption": "Toy represetation of text and image embeddings, respectively. Image by author."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Multimodal Embeddings",
-        "image_path": "images/1*5d3HBNjNIXLy0oMIvJjxWw.png",
-        "caption": "Toy representation of multimodal embedding space. Image by author."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Contrastive Learning",
-        "image_path": "images/1*AGHBVjzwjXapJSe4aUPrjg.png",
-        "caption": "Example positive and negative pairs used in contrastive training. Image by author."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Contrastive Learning",
-        "image_path": "images/1*2X1aT8fzFsgbqn23zXmmAA.png",
-        "caption": "CLIP’s contrastive loss for text-image representation alignment [3]. Image by author."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Example Code: Using CLIP for 0-shot classification and image search",
-        "image_path": "images/1*Nzo536sqahqm1Q24Ms2vmA.png",
-        "caption": "Input cat photo. Image from Canva."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Example Code: Using CLIP for 0-shot classification and image search",
-        "image_path": "images/1*4wnqr5p_7N3QD5EkXIQeew.png",
-        "caption": "Best match for query “a cute dog”. Image from Canva."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Example Code: Using CLIP for 0-shot classification and image search",
-        "image_path": "images/1*tIY3_ONQQT_cracAPWm8NQ.png",
-        "caption": "Best match for query “something cute but metal 🤘”. Image from Canva."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Example Code: Using CLIP for 0-shot classification and image search",
-        "image_path": "images/1*4wnqr5p_7N3QD5EkXIQeew.png",
-        "caption": "Best match for query “a good boy”. Image from Canva."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Example Code: Using CLIP for 0-shot classification and image search",
-        "image_path": "images/1*Nzo536sqahqm1Q24Ms2vmA.png",
-        "caption": "Best match for query “the best pet in the world”. Image from Canva."
-    },
-    {
         "article_title": "Multimodal Models — LLMs that can see and hear",
         "section": "Multimodal Models — LLMs That Can See and Hear",
-        "image_path": "images/0*YE-Q-OuWnrgrUrQw.jpg",
-        "caption": "Photo by Sincerely Media on Unsplash"
+        "image_path": "images/1.jpg",
+        "caption": "Photo by Sincerely Media on Unsplash",
+        "source_url": "https://cdn-images-1.medium.com/max/800/0*YE-Q-OuWnrgrUrQw"
     },
     {
         "article_title": "Multimodal Models — LLMs that can see and hear",
         "section": "What is a Multimodal Model?",
-        "image_path": "images/1*yvfu8VAp1UgCw4SVvUe77Q.png",
-        "caption": "Example mutlimodal models. Image by author."
+        "image_path": "images/2.png",
+        "caption": "Example mutlimodal models. Image by author.",
+        "source_url": "https://cdn-images-1.medium.com/max/800/1*yvfu8VAp1UgCw4SVvUe77Q.png"
     },
     {
         "article_title": "Multimodal Models — LLMs that can see and hear",
         "section": "Path 1: LLM + Tools",
-        "image_path": "images/1*Nwc-ZhRFKH17LWWmsNhbdA.png",
-        "caption": "An example of information degradation during message passing. Image by author."
+        "image_path": "images/3.png",
+        "caption": "An example of information degradation during message passing. Image by author.",
+        "source_url": "https://cdn-images-1.medium.com/max/800/1*Nwc-ZhRFKH17LWWmsNhbdA.png"
     },
     {
         "article_title": "Multimodal Models — LLMs that can see and hear",
         "section": "Path 2: LLM + Adapters",
-        "image_path": "images/1*pyqGh5Cbrk_EMlPYtrfrQw.png",
-        "caption": "A simple strategy for integrating images into an LLM via an image encoding adapter. Image by author."
+        "image_path": "images/4.png",
+        "caption": "A simple strategy for integrating images into an LLM via an image encoding adapter. Image by author.",
+        "source_url": "https://cdn-images-1.medium.com/max/800/1*pyqGh5Cbrk_EMlPYtrfrQw.png"
     },
     {
         "article_title": "Multimodal Models — LLMs that can see and hear",
         "section": "Example: Using LLaMA 3.2 Vision for Image-based Tasks",
-        "image_path": "images/1*lvX8Mut8SQ1vDhsaewLQ_g.jpeg",
-        "caption": "Image of me from networking event at Richardson IQ. Image by author."
+        "image_path": "images/5.png",
+        "caption": "Image of me from networking event at Richardson IQ. Image by author.",
+        "source_url": "https://cdn-images-1.medium.com/max/800/1*lvX8Mut8SQ1vDhsaewLQ_g.jpeg"
     },
     {
         "article_title": "Multimodal Models — LLMs that can see and hear",
         "section": "Example: Using LLaMA 3.2 Vision for Image-based Tasks",
-        "image_path": "images/1*IqUoZEX2CYOsX6oFIVeuIw.jpeg",
-        "caption": "Building with AI meme. Image by author."
+        "image_path": "images/6.png",
+        "caption": "Building with AI meme. Image by author.",
+        "source_url": "https://cdn-images-1.medium.com/max/800/1*IqUoZEX2CYOsX6oFIVeuIw.jpeg"
     },
     {
         "article_title": "Multimodal Models — LLMs that can see and hear",
         "section": "Example: Using LLaMA 3.2 Vision for Image-based Tasks",
-        "image_path": "images/1*PRSGngwjIVW01cLHK41lNg.jpeg",
-        "caption": "Screenshot of 5 AI project ideas. Image by author."
+        "image_path": "images/7.jpeg",
+        "caption": "Screenshot of 5 AI project ideas. Image by author.",
+        "source_url": "https://cdn-images-1.medium.com/max/800/1*PRSGngwjIVW01cLHK41lNg.jpeg"
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Multimodal Embeddings: An Introduction",
+        "image_path": "images/8.png",
+        "caption": "Image from Canva.",
+        "source_url": "https://cdn-images-1.medium.com/max/800/1*a6BF-kEeo8rd7OW2a3JYGA.png"
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Embeddings",
+        "image_path": "images/9.jpeg",
+        "caption": "Toy represetation of text and image embeddings, respectively. Image by author.",
+        "source_url": "https://cdn-images-1.medium.com/max/800/1*jpmC6Kx7DxVeikEr15vooA.png"
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Multimodal Embeddings",
+        "image_path": "images/10.png",
+        "caption": "Toy representation of multimodal embedding space. Image by author.",
+        "source_url": "https://cdn-images-1.medium.com/max/800/1*5d3HBNjNIXLy0oMIvJjxWw.png"
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Contrastive Learning",
+        "image_path": "images/11.png",
+        "caption": "Example positive and negative pairs used in contrastive training. Image by author.",
+        "source_url": "https://cdn-images-1.medium.com/max/800/1*AGHBVjzwjXapJSe4aUPrjg.png"
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Contrastive Learning",
+        "image_path": "images/12.jpeg",
+        "caption": "CLIP’s contrastive loss for text-image representation alignment [3]. Image by author.",
+        "source_url": "https://cdn-images-1.medium.com/max/800/1*2X1aT8fzFsgbqn23zXmmAA.png"
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Example Code: Using CLIP for 0-shot classification and image search",
+        "image_path": "images/13.png",
+        "caption": "Input cat photo. Image from Canva.",
+        "source_url": "https://cdn-images-1.medium.com/max/800/1*Nzo536sqahqm1Q24Ms2vmA.png"
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Example Code: Using CLIP for 0-shot classification and image search",
+        "image_path": "images/14.png",
+        "caption": "Best match for query “a cute dog”. Image from Canva.",
+        "source_url": "https://cdn-images-1.medium.com/max/800/1*4wnqr5p_7N3QD5EkXIQeew.png"
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Example Code: Using CLIP for 0-shot classification and image search",
+        "image_path": "images/15.png",
+        "caption": "Best match for query “something cute but metal 🤘”. Image from Canva.",
+        "source_url": "https://cdn-images-1.medium.com/max/800/1*tIY3_ONQQT_cracAPWm8NQ.png"
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Example Code: Using CLIP for 0-shot classification and image search",
+        "image_path": "images/14.png",
+        "caption": "Best match for query “a good boy”. Image from Canva.",
+        "source_url": "https://cdn-images-1.medium.com/max/800/1*4wnqr5p_7N3QD5EkXIQeew.png"
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Example Code: Using CLIP for 0-shot classification and image search",
+        "image_path": "images/13.png",
+        "caption": "Best match for query “the best pet in the world”. Image from Canva.",
+        "source_url": "https://cdn-images-1.medium.com/max/800/1*Nzo536sqahqm1Q24Ms2vmA.png"
     }
 ]

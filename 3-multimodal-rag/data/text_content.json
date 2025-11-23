@@ -1,195 +1,5 @@
 [
     {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Multimodal Embeddings: An Introduction",
-        "text": "This is the 2nd article in a larger series on multimodal AI. In the previous post, we saw how to augment large language models (LLMs) to understand new data modalities (e.g., images, audio, video). One such approach relied on encoders that generate vector representations (i.e. embeddings) of non-text data. In this article, I will discuss multimodal embeddings and share what they can do via two practical use cases."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Multimodal Embeddings: An Introduction",
-        "text": "AI research is traditionally split into distinct fields: NLP, computer vision (CV), robotics, human-computer interface (HCI), etc. However, countless practical tasks require the integration of these different research areas e.g. autonomous vehicles (CV + robotics), AI agents (NLP + CV + HCI), personalized learning (NLP + HCI), etc."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Multimodal Embeddings: An Introduction",
-        "text": "Although these fields aim to solve different problems and work with different data types, they all share a fundamental process. Namely, generating useful numerical representations of real-world phenomena."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Multimodal Embeddings: An Introduction",
-        "text": "Historically, this was done by hand. This means that researchers and practitioners would use their (or other people’s) expertise to explicitly transform data into a more helpful form. Today, however, these can be derived another way."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Embeddings",
-        "text": "Embeddings are (useful) numerical representations of data learned implicitly through model training. For example, through learning how to predict text, BERT learned representations of text, which are helpful for many NLP tasks [1]. Another example is the Vision Transformer (ViT), trained for image classification on Image Net, which can be repurposed for other applications [2]."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Embeddings",
-        "text": "A key point here is that these learned embedding spaces will have some underlying structure so that similar concepts are located close together. As shown in the toy examples below."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Embeddings",
-        "text": "One key limitation of the previously mentioned models is they are restricted to a single data modality, e.g., text or images. Preventing cross-modal applications like image captioning, content moderation, image search, and more. But what if we could merge these two representations?"
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Multimodal Embeddings",
-        "text": "Although text and images may look very different to us, in a neural network, these are represented via the same mathematical object, i.e., a vector. Therefore, in principle, text, images, or any other data modality can processed by a single model."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Multimodal Embeddings",
-        "text": "This fact underlies multimodal embeddings, which represent multiple data modalities in the same vector space such that similar concepts are co-located (independent of their original representations)."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Multimodal Embeddings",
-        "text": "For example, CLIP encodes text and images into a shared embedding space [3]. A key insight from CLIP is that by aligning text and image representations, the model is capable of 0-shot image classification on an arbitrary set of target classes since any input text can be treated as a class label (we will see a concrete example of this later)."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Multimodal Embeddings",
-        "text": "However, this idea is not limited to text and images. Virtually any data modalities can be aligned in this way e.g., text-audio, audio-image, text-EEG, image-tabular, and text-video. Unlocking use cases such as video captioning, advanced OCR, audio transcription, video search, and EEG-to-text [4]."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Contrastive Learning",
-        "text": "The standard approach to aligning disparate embedding spaces is contrastive learning (CL). A key intuition of CL is to represent different views of the same information similarly [5]."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Contrastive Learning",
-        "text": "This consists of learning representations that maximize the similarity between positive pairs and minimize the similarity of negative pairs. In the case of an image-text model, a positive pair might be an image with an appropriate caption, while a negative pair would be an image with an irrelevant caption (as shown below)."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Contrastive Learning",
-        "text": "Two key aspects of CL contribute to its effectiveness"
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Contrastive Learning",
-        "text": "Since positive and negative pairs can be curated from the data’s inherent structure (e.g., metadata from web images), CL training data do not require manual labeling, which unlocks larger-scale training and more powerful representations [3].It simultaneously maximizes positive and minimizes negative pair similarity via a special loss function, as demonstrated by CLIP [3]."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Example Code: Using CLIP for 0-shot classification and image search",
-        "text": "With a high-level understanding of how multimodal embeddings work, let’s see two concrete examples of what they can do. Here, I will use the open-source CLIP model to perform two tasks: 0-shot image classification and image search."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Example Code: Using CLIP for 0-shot classification and image search",
-        "text": "The code for these examples is freely available on the GitHub repository."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Example Code: Using CLIP for 0-shot classification and image search",
-        "text": "The basic idea behind using CLIP for 0-shot image classification is to pass an image into the model along with a set of possible class labels. Then, a classification can be made by evaluating which text input is most similar to the input image."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Example Code: Using CLIP for 0-shot classification and image search",
-        "text": "We’ll start by importing the Hugging Face Transformers library so that the CLIP model can be downloaded locally. Additionally, the PIL library is used to load images in Python."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Example Code: Using CLIP for 0-shot classification and image search",
-        "text": "Next, we can import a version of the clip model and its associated data processor. Note: the processor handles tokenizing input text and image preparation."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Example Code: Using CLIP for 0-shot classification and image search",
-        "text": "We load in the below image of a cat and create a list of two possible class labels: “a photo of a cat” or “a photo of a dog”."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Example Code: Using CLIP for 0-shot classification and image search",
-        "text": "Next, we’ll preprocess the image/text inputs and pass them into the model."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Example Code: Using CLIP for 0-shot classification and image search",
-        "text": "To make a class prediction, we must extract the image logits and evaluate which class corresponds to the maximum."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Example Code: Using CLIP for 0-shot classification and image search",
-        "text": "The model nailed it with a 99.79% probability that it’s a cat photo. However, this was a super easy one. Let’s see what happens when we change the class labels to: “ugly cat” and “cute cat” for the same image."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Example Code: Using CLIP for 0-shot classification and image search",
-        "text": "The model easily identified that the image was indeed a cute cat. Let’s do something more challenging like the labels: “cat meme” or “not cat meme”."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Example Code: Using CLIP for 0-shot classification and image search",
-        "text": "While the model is less confident about this prediction with a 54.64% probability, it correctly implies that the image is not a meme."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Example Code: Using CLIP for 0-shot classification and image search",
-        "text": "Another application of CLIP is essentially the inverse of Use Case 1. Rather than identifying which text label matches an input image, we can evaluate which image (in a set) best matches a text input (i.e. query)—in other words, performing a search over images."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Example Code: Using CLIP for 0-shot classification and image search",
-        "text": "We start by storing a set of images in a list. Here, I have three images of a cat, dog, and goat, respectively."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Example Code: Using CLIP for 0-shot classification and image search",
-        "text": "Next, we can define a query like “a cute dog” and pass it and the images into CLIP."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Example Code: Using CLIP for 0-shot classification and image search",
-        "text": "We can then match the best image to the input text by extracting the text logits and evaluating the image corresponding to the maximum."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Example Code: Using CLIP for 0-shot classification and image search",
-        "text": "We see that (again) the model nailed this simple example. But let’s try some trickier examples."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "Example Code: Using CLIP for 0-shot classification and image search",
-        "text": "Although this last prediction is quite controversial, all the other matches were spot on! This is likely since images like these are ubiquitous on the internet and thus were seen many times in CLIP’s pre-training."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "What’s Next?",
-        "text": "Multimodal embeddings unlock countless AI use cases that involve multiple data modalities. Here, we saw two such use cases, i.e., 0-shot image classification and image search using CLIP."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "What’s Next?",
-        "text": "Another practical application of models like CLIP is multimodal RAG, which consists of the automated retrieval of multimodal context to an LLM. In the next article of this series, we will see how this works under the hood and review a concrete example."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "What’s Next?",
-        "text": "My website: https://www.shawhintalebi.com/"
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "What’s Next?",
-        "text": "[1] BERT[2] ViT[3] CLIP[4] Thought2Text: Text Generation from EEG Signal using Large Language Models (LLMs)[5] A Simple Framework for Contrastive Learning of Visual Representations"
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "What’s Next?",
-        "text": "By Shaw Talebi on November 29, 2024."
-    },
-    {
-        "article_title": "Multimodal Embeddings: An Introduction",
-        "section": "What’s Next?",
-        "text": "Exported from Medium on December 2, 2024."
-    },
-    {
         "article_title": "Multimodal Models — LLMs that can see and hear",
         "section": "Multimodal Models — LLMs That Can See and Hear",
         "text": "This is the first post in a larger series on Multimodal AI. A Multimodal Model (MM) is an AI system capable of processing or generating multiple data modalities (e.g., text, image, audio, video). In this article, I will discuss a particular type of MM that builds on top of a large language model (LLM). I’ll start with a high-level overview of such models and then share example code for using LLaMA 3.2 Vision to perform various image-to-text tasks."
@@ -427,6 +237,196 @@
     {
         "article_title": "Multimodal Models — LLMs that can see and hear",
         "section": "What’s next?",
+        "text": "Exported from Medium on December 2, 2024."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Multimodal Embeddings: An Introduction",
+        "text": "This is the 2nd article in a larger series on multimodal AI. In the previous post, we saw how to augment large language models (LLMs) to understand new data modalities (e.g., images, audio, video). One such approach relied on encoders that generate vector representations (i.e. embeddings) of non-text data. In this article, I will discuss multimodal embeddings and share what they can do via two practical use cases."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Multimodal Embeddings: An Introduction",
+        "text": "AI research is traditionally split into distinct fields: NLP, computer vision (CV), robotics, human-computer interface (HCI), etc. However, countless practical tasks require the integration of these different research areas e.g. autonomous vehicles (CV + robotics), AI agents (NLP + CV + HCI), personalized learning (NLP + HCI), etc."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Multimodal Embeddings: An Introduction",
+        "text": "Although these fields aim to solve different problems and work with different data types, they all share a fundamental process. Namely, generating useful numerical representations of real-world phenomena."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Multimodal Embeddings: An Introduction",
+        "text": "Historically, this was done by hand. This means that researchers and practitioners would use their (or other people’s) expertise to explicitly transform data into a more helpful form. Today, however, these can be derived another way."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Embeddings",
+        "text": "Embeddings are (useful) numerical representations of data learned implicitly through model training. For example, through learning how to predict text, BERT learned representations of text, which are helpful for many NLP tasks [1]. Another example is the Vision Transformer (ViT), trained for image classification on Image Net, which can be repurposed for other applications [2]."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Embeddings",
+        "text": "A key point here is that these learned embedding spaces will have some underlying structure so that similar concepts are located close together. As shown in the toy examples below."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Embeddings",
+        "text": "One key limitation of the previously mentioned models is they are restricted to a single data modality, e.g., text or images. Preventing cross-modal applications like image captioning, content moderation, image search, and more. But what if we could merge these two representations?"
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Multimodal Embeddings",
+        "text": "Although text and images may look very different to us, in a neural network, these are represented via the same mathematical object, i.e., a vector. Therefore, in principle, text, images, or any other data modality can processed by a single model."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Multimodal Embeddings",
+        "text": "This fact underlies multimodal embeddings, which represent multiple data modalities in the same vector space such that similar concepts are co-located (independent of their original representations)."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Multimodal Embeddings",
+        "text": "For example, CLIP encodes text and images into a shared embedding space [3]. A key insight from CLIP is that by aligning text and image representations, the model is capable of 0-shot image classification on an arbitrary set of target classes since any input text can be treated as a class label (we will see a concrete example of this later)."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Multimodal Embeddings",
+        "text": "However, this idea is not limited to text and images. Virtually any data modalities can be aligned in this way e.g., text-audio, audio-image, text-EEG, image-tabular, and text-video. Unlocking use cases such as video captioning, advanced OCR, audio transcription, video search, and EEG-to-text [4]."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Contrastive Learning",
+        "text": "The standard approach to aligning disparate embedding spaces is contrastive learning (CL). A key intuition of CL is to represent different views of the same information similarly [5]."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Contrastive Learning",
+        "text": "This consists of learning representations that maximize the similarity between positive pairs and minimize the similarity of negative pairs. In the case of an image-text model, a positive pair might be an image with an appropriate caption, while a negative pair would be an image with an irrelevant caption (as shown below)."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Contrastive Learning",
+        "text": "Two key aspects of CL contribute to its effectiveness"
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Contrastive Learning",
+        "text": "Since positive and negative pairs can be curated from the data’s inherent structure (e.g., metadata from web images), CL training data do not require manual labeling, which unlocks larger-scale training and more powerful representations [3].It simultaneously maximizes positive and minimizes negative pair similarity via a special loss function, as demonstrated by CLIP [3]."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Example Code: Using CLIP for 0-shot classification and image search",
+        "text": "With a high-level understanding of how multimodal embeddings work, let’s see two concrete examples of what they can do. Here, I will use the open-source CLIP model to perform two tasks: 0-shot image classification and image search."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Example Code: Using CLIP for 0-shot classification and image search",
+        "text": "The code for these examples is freely available on the GitHub repository."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Example Code: Using CLIP for 0-shot classification and image search",
+        "text": "The basic idea behind using CLIP for 0-shot image classification is to pass an image into the model along with a set of possible class labels. Then, a classification can be made by evaluating which text input is most similar to the input image."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Example Code: Using CLIP for 0-shot classification and image search",
+        "text": "We’ll start by importing the Hugging Face Transformers library so that the CLIP model can be downloaded locally. Additionally, the PIL library is used to load images in Python."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Example Code: Using CLIP for 0-shot classification and image search",
+        "text": "Next, we can import a version of the clip model and its associated data processor. Note: the processor handles tokenizing input text and image preparation."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Example Code: Using CLIP for 0-shot classification and image search",
+        "text": "We load in the below image of a cat and create a list of two possible class labels: “a photo of a cat” or “a photo of a dog”."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Example Code: Using CLIP for 0-shot classification and image search",
+        "text": "Next, we’ll preprocess the image/text inputs and pass them into the model."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Example Code: Using CLIP for 0-shot classification and image search",
+        "text": "To make a class prediction, we must extract the image logits and evaluate which class corresponds to the maximum."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Example Code: Using CLIP for 0-shot classification and image search",
+        "text": "The model nailed it with a 99.79% probability that it’s a cat photo. However, this was a super easy one. Let’s see what happens when we change the class labels to: “ugly cat” and “cute cat” for the same image."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Example Code: Using CLIP for 0-shot classification and image search",
+        "text": "The model easily identified that the image was indeed a cute cat. Let’s do something more challenging like the labels: “cat meme” or “not cat meme”."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Example Code: Using CLIP for 0-shot classification and image search",
+        "text": "While the model is less confident about this prediction with a 54.64% probability, it correctly implies that the image is not a meme."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Example Code: Using CLIP for 0-shot classification and image search",
+        "text": "Another application of CLIP is essentially the inverse of Use Case 1. Rather than identifying which text label matches an input image, we can evaluate which image (in a set) best matches a text input (i.e. query)—in other words, performing a search over images."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Example Code: Using CLIP for 0-shot classification and image search",
+        "text": "We start by storing a set of images in a list. Here, I have three images of a cat, dog, and goat, respectively."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Example Code: Using CLIP for 0-shot classification and image search",
+        "text": "Next, we can define a query like “a cute dog” and pass it and the images into CLIP."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Example Code: Using CLIP for 0-shot classification and image search",
+        "text": "We can then match the best image to the input text by extracting the text logits and evaluating the image corresponding to the maximum."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Example Code: Using CLIP for 0-shot classification and image search",
+        "text": "We see that (again) the model nailed this simple example. But let’s try some trickier examples."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "Example Code: Using CLIP for 0-shot classification and image search",
+        "text": "Although this last prediction is quite controversial, all the other matches were spot on! This is likely since images like these are ubiquitous on the internet and thus were seen many times in CLIP’s pre-training."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "What’s Next?",
+        "text": "Multimodal embeddings unlock countless AI use cases that involve multiple data modalities. Here, we saw two such use cases, i.e., 0-shot image classification and image search using CLIP."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "What’s Next?",
+        "text": "Another practical application of models like CLIP is multimodal RAG, which consists of the automated retrieval of multimodal context to an LLM. In the next article of this series, we will see how this works under the hood and review a concrete example."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "What’s Next?",
+        "text": "My website: https://www.shawhintalebi.com/"
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "What’s Next?",
+        "text": "[1] BERT[2] ViT[3] CLIP[4] Thought2Text: Text Generation from EEG Signal using Large Language Models (LLMs)[5] A Simple Framework for Contrastive Learning of Visual Representations"
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "What’s Next?",
+        "text": "By Shaw Talebi on November 29, 2024."
+    },
+    {
+        "article_title": "Multimodal Embeddings: An Introduction",
+        "section": "What’s Next?",
         "text": "Exported from Medium on December 2, 2024."
     }
 ]
