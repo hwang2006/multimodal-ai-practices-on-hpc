@@ -20,8 +20,8 @@ OLLAMA_PORT=11434
 
 # Set a model to preload/warm in the UI; set to 0 to disable preloading
 #DEFAULT_MODEL="gemma:latest"
-#DEFAULT_MODEL="llama3.2-vision:latest"
-DEFAULT_MODEL=0
+DEFAULT_MODEL="llama3.2-vision:latest"
+#DEFAULT_MODEL=0
 
 WORK_DIR="/scratch/$USER/multimodal-ai-practices-on-hpc/"
 OLLAMA_MODELS="/scratch/$USER/.ollama"
