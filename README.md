@@ -143,10 +143,10 @@ Clone this repository to your scratch directory:
 
 ```bash
 [glogin01]$ cd /scratch/$USER
-[glogin01]$ git clone https://github.com/hwang2006/hands-on-multimodal-ai-practices-on-hpc.git
-[glogin01]$ cd hands-on-multimodal-ai-practices-on-hpc
+[glogin01]$ git clone https://github.com/hwang2006/ultimodal-ai-practices-on-hpc.git
+[glogin01]$ cd multimodal-ai-practices-on-hpc
 [glogin01]$ ls
-./   1-mm-llms/        3-multimodal-rag/    5-ft-flux/  .gitignore      LICENSE     README.md
+./   1-mm-llms/        3-multimodal-rag/    .gitignore      LICENSE     README.md
 ../  2-mm-embeddings/  4-ft-mm-embeddings/  .git/       jupyter_run.sh
 ```
 
