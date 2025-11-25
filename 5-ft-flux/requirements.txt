@@ -1,6 +1,0 @@
-jupyterlab
-ipykernel
-ipywidgets
-replicate
-pillow
-python-dotenv

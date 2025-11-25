@@ -218,3 +218,4 @@ slurm-*.out
 4-ft-mm-embeddings/top_secret.py
 4-ft-mm-embeddings/models/
 
+.env
