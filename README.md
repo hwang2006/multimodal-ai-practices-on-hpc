@@ -14,7 +14,6 @@ Each subdirectory under `multimodal-ai-practices-on-hpc` demonstrates a differen
 - **2-mm-embeddings** – Build and query **joint image–text embeddings** (CLIP-style) for similarity search and retrieval.
 - **3-multimodal-rag** – Implement a **multimodal RAG pipeline** with text/image embedding indices and a Gradio chat UI backed by `llama3.2-vision`.
 - **4-ft-mm-embeddings** – Create a **YouTube title–thumbnail dataset** and fine-tune CLIP-based SentenceTransformers models (with Recall@1 / triplet evaluation) on Neuron.
-- **5-ft-flux** *(optional)* – Explore fine-tuning image generation models (e.g., FLUX) in the same Neuron + Conda + Slurm setup.
 
 ---
 
