@@ -1,7 +1,6 @@
 # Hands-on Multimodal AI Practices on HPC
 
-This repository provides **hands-on examples** for running **multimodal AI workloads** (text + image) on the **KISTI Neuron GPU cluster** — covering everything from multimodal LLM inference to RAG pipelines and fine-tuning custom image–text embedding models.  
-It is designed for HPC users who want **practical, end-to-end recipes** that work in a real HPC environment, including Slurm job submission, Singularity-based Ollama deployment, Conda environment setup, and Jupyter Lab access via SSH tunneling.
+This repository provides **hands-on examples** for running **multimodal AI workloads** (text + image) on the **KISTI Neuron GPU cluster** — covering everything from multimodal LLM inference to RAG pipelines and fine-tuning custom image–text embedding models.  It is designed for HPC users who want **practical, end-to-end recipes** that work in a real HPC environment, including Slurm job submission, Singularity-based Ollama deployment, Conda environment setup, and Jupyter Lab access via SSH tunneling.
 
 > **Note:** Adapted from [Shaw Talebi’s multimodal AI repository](https://github.com/ShawhinT/YouTube-Blog/tree/main/multimodal-ai) and extended for HPC environments (Slurm, Singularity, and Neuron-specific workflows).
 
